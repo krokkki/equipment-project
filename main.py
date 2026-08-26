@@ -21,12 +21,18 @@ def add_equipment():
 def find_equipment():
   search = input("Введите название для поиска: ").lower()
 
+  found = []
+
   for item in equipment:
     if search in item.lower():
-      print(f"Найдено: {item}")
-      return
+      found.append(item)
 
-  print("Оборудование не найдено.")
+  if found:
+    print("\nНайденное оборудование:")
+    for item in found:
+      print(f"- {item}")
+  else:
+    print("Оборудование не найдено.")
 
 
 while True:
